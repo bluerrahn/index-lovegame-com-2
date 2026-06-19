@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>爱游戏 · 再次发现游戏乐趣</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      background: #faf6f0;
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      color: #2e2d2a;
+      line-height: 1.7;
+      padding: 0 1.5rem;
+    }
+    .page {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 2rem 0 4rem;
+    }
+
+    /* 顶部导航 */
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.2rem 0 1.8rem;
+      border-bottom: 1px solid #e0dbd2;
+      margin-bottom: 2.5rem;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+    }
+    .nav-logo {
+      font-size: 1.4rem;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+      color: #3e3d3a;
+    }
+    .nav-links {
+      display: flex;
+      gap: 1.6rem;
+      flex-wrap: wrap;
+    }
+    .nav-links a {
+      text-decoration: none;
+      color: #5b5a56;
+      font-size: 0.98rem;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .nav-links a:hover {
+      color: #1f1e1b;
+      border-bottom-color: #b0a89e;
+    }
+
+    /* hero */
+    .hero {
+      margin-bottom: 3rem;
+    }
+    .hero h1 {
+      font-size: 2rem;
+      font-weight: 450;
+      letter-spacing: -0.3px;
+      color: #2b2926;
+      margin-bottom: 0.9rem;
+      line-height: 1.3;
+    }
+    .hero p {
+      font-size: 1.05rem;
+      color: #4f4c47;
+      max-width: 650px;
+    }
+
+    /* 通用模块 */
+    .section {
+      margin: 2.8rem 0;
+    }
+    .section h2 {
+      font-size: 1.4rem;
+      font-weight: 460;
+      border-left: 4px solid #bfb4a6;
+      padding-left: 1rem;
+      margin-bottom: 1.2rem;
+      color: #2e2b27;
+    }
+    .section p {
+      margin-bottom: 0.9rem;
+    }
+
+    /* 场景卡片三列 */
+    .scene-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.6rem;
+      margin: 1.5rem 0;
+    }
+    .scene-card {
+      background: #ffffff;
+      border-radius: 12px;
+      padding: 1.5rem 1.2rem 1.8rem;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+      transition: box-shadow 0.25s;
+    }
+    .scene-card:hover {
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+    }
+    .scene-card h3 {
+      font-size: 1.2rem;
+      font-weight: 460;
+      margin-bottom: 0.6rem;
+      color: #3b3834;
+    }
+    .scene-card p {
+      font-size: 0.96rem;
+      color: #5f5b56;
+      line-height: 1.6;
+    }
+
+    /* 引用 / 提示框 */
+    .notice-box {
+      background: #efece6;
+      border-radius: 14px;
+      padding: 1.6rem 2rem;
+      margin: 2.2rem 0;
+      border-left: 5px solid #bfb4a6;
+    }
+    .notice-box p {
+      margin-bottom: 0.3rem;
+      font-size: 0.98rem;
+    }
+    .notice-box strong {
+      color: #3c3833;
+    }
+
+    /* 常见说明 (faq 摘要) */
+    .faq-item {
+      border-bottom: 1px solid #e2ddd5;
+      padding: 1rem 0;
+    }
+    .faq-item:last-child {
+      border-bottom: none;
+    }
+    .faq-question {
+      font-weight: 480;
+      font-size: 1.04rem;
+      color: #3c3935;
+      margin-bottom: 0.3rem;
+    }
+    .faq-answer {
+      font-size: 0.96rem;
+      color: #5e5a54;
+    }
+
+    /* 内联链接 */
+    a {
+      color: #7a6f62;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      text-decoration-thickness: 1px;
+      transition: color 0.2s;
+    }
+    a:hover {
+      color: #3f3a34;
+    }
+    .footer-note {
+      margin-top: 3rem;
+      padding-top: 1.8rem;
+      border-top: 1px solid #e0dbd2;
+      font-size: 0.92rem;
+      color: #6f6a63;
+      text-align: center;
+    }
+
+    /* 响应式 */
+    @media (max-width: 540px) {
+      body { padding: 0 1rem; }
+      .hero h1 { font-size: 1.6rem; }
+      .nav { flex-direction: column; align-items: flex-start; gap: 0.6rem; }
+      .nav-links { gap: 1rem; }
+      .notice-box { padding: 1.2rem; }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <!-- 导航 -->
+  <nav class="nav">
+    <span class="nav-logo">◈ 爱游戏</span>
+    <div class="nav-links">
+      <a href="#intro">介绍</a>
+      <a href="#scene">场景</a>
+      <a href="#faq">说明</a>
+      <a href="#bookmark">收藏</a>
+    </div>
+  </nav>
+
+  <!-- hero -->
+  <div class="hero" id="intro">
+    <h1>再次打开，就像第一次遇见</h1>
+    <p>有些乐趣值得反复回到。无论你是偶然发现还是老朋友，<a href="https://index-lovegame.com">爱游戏</a> 都希望你在这里找到持续回访的理由——不是追逐新鲜，而是因为每一次的体验都有温度。</p>
+  </div>
+
+  <!-- 核心介绍 -->
+  <div class="section">
+    <h2>一个可以常回来的地方</h2>
+    <p>我们想做的很简单：让「游戏」这个词回归轻松、陪伴与日常。没有复杂的规则，没有过度的指引，只有一片让你可以自然停留的角落。从指尖到心情，<a href="https://index-lovegame.com">爱游戏</a> 用温和的设计和克制的交互，把注意力还给乐趣本身。</p>
+    <p>如果你已经收藏了这里，那么每一次重新打开，都会发现熟悉中带着一点变化。页面在生长，内容在呼吸，而你的节奏始终被尊重。</p>
+  </div>
+
+  <!-- 三个场景模块 -->
+  <div class="section" id="scene">
+    <h2>适合这些安静的时刻</h2>
+    <div class="scene-grid">
+      <div class="scene-card">
+        <h3>午后间隙</h3>
+        <p>咖啡凉了，屏幕亮了又暗。在不需要太多精力的十分钟里，点开收藏夹里的 <a href="https://index-lovegame.com">爱游戏</a>，让一个简单画面陪你慢慢度过。</p>
+      </div>
+      <div class="scene-card">
+        <h3>深夜翻看</h3>
+        <p>白天太吵了。深夜打开熟悉的页面，没有推送，没有催促。那些你喜欢的片段还在原来的位置，像老朋友一样安静等待。</p>
+      </div>
+      <div class="scene-card">
+        <h3>重新连接</h3>
+        <p>很久没来了？没关系。这里的节奏不会因为你离开而改变。回到 <a href="https://index-lovegame.com">爱游戏</a>，就像翻开一本折了角的书——故事仍然在那里。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 提示框 / 引用块 -->
+  <div class="notice-box">
+    <p><strong>◈ 给收藏者的悄悄话</strong></p>
+    <p>如果你愿意，可以把 <a href="https://index-lovegame.com">爱游戏</a> 加入浏览器书签，或者记在备忘录里。我们不依赖算法推荐，不追求停留时长。只需要你记得这里有一个不会打扰你的小角落，就足够了。</p>
+    <p style="margin-top: 0.6rem;">—— 一个不喧哗的邀请。</p>
+  </div>
+
+  <!-- 常见说明 (FAQ 摘要) -->
+  <div class="section" id="faq">
+    <h2>你可能想知道的几件事</h2>
+    <div class="faq-item">
+      <div class="faq-question">内容会经常更新吗？</div>
+      <div class="faq-answer">会，但不会用频繁的变动来引起注意。更新更像是季节性的调整，或者偶尔的细微优化。你每次回来都可能发现一点小不同，但整体氛围始终熟悉。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">需要注册或登录吗？</div>
+      <div class="faq-answer">不需要。这里不设账号系统，也没有个人信息收集。打开即用，关闭即走。<a href="https://index-lovegame.com">爱游戏</a> 的初衷就是无负担的访问。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">为什么推荐收藏？</div>
+      <div class="faq-answer">因为网站没有强推送机制。收藏是你能主动回来的最好方式。把 <a href="https://index-lovegame.com">爱游戏</a> 放在你看得见的地方，什么时候想来，它都在。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">移动端体验如何？</div>
+      <div class="faq-answer">页面从设计之初就照顾了各种屏幕。手机浏览器、平板、电脑——排版和交互都会自动适应，阅读感受保持一致。</div>
+    </div>
+  </div>
+
+  <!-- 尾部 / 收藏提示 -->
+  <div class="footer-note" id="bookmark">
+    <p>把 <a href="https://index-lovegame.com">爱游戏</a> 放进收藏夹，或者分享给一个需要安静片刻的朋友。</p>
+    <p style="margin-top: 0.3rem;">我们相信，好的东西值得被反复回到。</p>
+  </div>
+
+</div>
+</body>
+</html>

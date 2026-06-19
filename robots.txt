@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://bluerrahn.github.io/index-lovegame-com-2/sitemap.xml
